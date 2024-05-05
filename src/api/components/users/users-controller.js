@@ -104,9 +104,11 @@ async function updateUser(request, response, next) {
     const name = request.body.name;
     const email = request.body.email;
 
+    const u = await usersService.getUser(id);
+
     // Email must be unique
     const emailIsRegistered = await usersService.emailIsRegistered(email);
-    if (emailIsRegistered) {
+    if (emailIsRegistered && u.email !== email) {
       throw errorResponder(
         errorTypes.EMAIL_ALREADY_TAKEN,
         'Email is already registered'

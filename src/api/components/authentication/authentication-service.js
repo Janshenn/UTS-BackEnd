@@ -10,7 +10,7 @@ const { passwordMatched } = require('../../../utils/password');
  */
 async function checkLoginCredentials(email, password) {
   const user = await authenticationRepository.getUserByEmail(email);
-
+  console.log('user', user);
   // We define default user password here as '<RANDOM_PASSWORD_FILTER>'
   // to handle the case when the user login is invalid. We still want to
   // check the password anyway, so that it prevents the attacker in

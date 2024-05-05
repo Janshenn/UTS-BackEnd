@@ -1,0 +1,22 @@
+meta {
+  name: Login attempt
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:5000/api/authentication/login
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHVudGFyLmlkIiwidXNlcklkIjoiNjYzNWU5NzQ1N2MxYjMzOWY5OGY0ODY5IiwiaWF0IjoxNzE0ODkzMDIxLCJleHAiOjE3MTQ5Nzk0MjF9.pjDkRFEvjNumwkX5K0_Dp8XwyloKWX9FUFKgW8OG6OQ
+}
+
+body:json {
+  {
+    "email":"admin@untar.id",
+    "password":"untar1"
+  }
+}

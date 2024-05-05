@@ -1,0 +1,22 @@
+meta {
+  name: Listt
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:5000/api/users?page_number=1&page_size=5&sort=email:asc
+  body: none
+  auth: none
+}
+
+query {
+  page_number: 1
+  page_size: 5
+  sort: email:asc
+  ~search: email:nasabah@untar.id
+}
+
+headers {
+  Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHVudGFyLmlkIiwidXNlcklkIjoiNjYzNWU5NzQ1N2MxYjMzOWY5OGY0ODY5IiwiaWF0IjoxNzE0ODg0NjE3LCJleHAiOjE3MTQ5NzEwMTd9._8W-4JTUQS9AGrBRaJyEB8-PouQ4ZDvmb6Y48mC10W8
+}
