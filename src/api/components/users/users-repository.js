@@ -1,11 +1,22 @@
-const { User } = require('../../../models');
+const { User, TransactionLogs } = require('../../../models');
+// const { account_status } = require('../../../models/users-schema');
 
 /**
  * Get a list of users
  * @returns {Promise}
  */
 async function getUsers() {
-  return User.find({});
+  // return User.find({});
+  return User.aggregate([
+    {
+      $lookup: {
+        from: 'investment_deposits',
+        localField: 'email',
+        foreignField: 'email',
+        as: 'investment_deposits',
+      },
+    },
+  ]);
 }
 
 /**
@@ -24,11 +35,21 @@ async function getUser(id) {
  * @param {string} password - Hashed password
  * @returns {Promise}
  */
-async function createUser(name, email, password) {
+async function createUser(
+  name,
+  email,
+  password,
+  role = 'admin',
+  account_status = true,
+  balance = 0
+) {
   return User.create({
     name,
     email,
     password,
+    role,
+    account_status,
+    balance,
   });
 }
 
@@ -48,6 +69,27 @@ async function updateUser(id, name, email) {
       $set: {
         name,
         email,
+      },
+    }
+  );
+}
+
+async function addDeposit(id, amount) {
+  const user = await User.findById(id);
+  await TransactionLogs.create({
+    email: user.email,
+    type: 'deposit',
+    amount,
+    message: `Deposit ${amount}`,
+  });
+
+  return User.updateOne(
+    {
+      _id: id,
+    },
+    {
+      $set: {
+        balance: user.balance + amount,
       },
     }
   );
@@ -81,6 +123,10 @@ async function changePassword(id, password) {
   return User.updateOne({ _id: id }, { $set: { password } });
 }
 
+async function verified(id) {
+  return User.updateOne({ _id: id }, { $set: { account_status: true } });
+}
+
 module.exports = {
   getUsers,
   getUser,
@@ -89,4 +135,6 @@ module.exports = {
   deleteUser,
   getUserByEmail,
   changePassword,
+  addDeposit,
+  verified,
 };

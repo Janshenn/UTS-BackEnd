@@ -1,0 +1,31 @@
+meta {
+  name: List
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:5000/api/transaction-logs?page_number=1&page_size=5&sort=email:asc
+  body: json
+  auth: none
+}
+
+query {
+  page_number: 1
+  page_size: 5
+  sort: email:asc
+  ~search: email:nasabah@untar.id
+}
+
+headers {
+  Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHVudGFyLmlkIiwidXNlcklkIjoiNjYzNWU5NzQ1N2MxYjMzOWY5OGY0ODY5IiwiaWF0IjoxNzE0ODUyMzYzLCJleHAiOjE3MTQ5Mzg3NjN9.h_Z-XoBxwA7p2OF7UbbexRdKy6gcnmW6PlAOv8UN77g
+}
+
+body:json {
+  {
+    "name":"Nasabah 2",
+    "email":"nasabah2@untar.id",
+    "password":"Romusa#7!",
+    "password_confirm":"Romusa#7!"
+  }
+}

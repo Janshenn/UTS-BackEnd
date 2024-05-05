@@ -1,5 +1,6 @@
 const usersService = require('./users-service');
 const { errorResponder, errorTypes } = require('../../../core/errors');
+const { default: pino } = require('pino');
 
 /**
  * Handle get list of users request
@@ -10,7 +11,14 @@ const { errorResponder, errorTypes } = require('../../../core/errors');
  */
 async function getUsers(request, response, next) {
   try {
-    const users = await usersService.getUsers();
+    // pino().info(request.query.search);
+    console.log(request);
+    const users = await usersService.getUsers(
+      request.query.page_number,
+      request.query.page_size,
+      request.query.search,
+      request.query.sort
+    );
     return response.status(200).json(users);
   } catch (error) {
     return next(error);
@@ -189,6 +197,31 @@ async function changePassword(request, response, next) {
   }
 }
 
+async function deposit(request, response, next) {
+  try {
+    const id = request.params.id;
+    const amount = request.body.amount;
+
+    const success = await usersService.addDeposit(id, amount);
+
+    return response.status(200).json({ id });
+  } catch (error) {
+    return next(error);
+  }
+}
+
+async function verified(request, response, next) {
+  try {
+    const id = request.params.id;
+
+    const success = await usersService.verified(id);
+
+    return response.status(200).json({ id });
+  } catch (error) {
+    return next(error);
+  }
+}
+
 module.exports = {
   getUsers,
   getUser,
@@ -196,4 +229,6 @@ module.exports = {
   updateUser,
   deleteUser,
   changePassword,
+  deposit,
+  verified,
 };

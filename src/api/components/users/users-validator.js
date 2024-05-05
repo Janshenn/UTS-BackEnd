@@ -30,6 +30,12 @@ module.exports = {
     },
   },
 
+  deposit: {
+    body: {
+      amount: joi.number().min(100).required().label('Amount'),
+    },
+  },
+
   changePassword: {
     body: {
       password_old: joi.string().required().label('Old password'),

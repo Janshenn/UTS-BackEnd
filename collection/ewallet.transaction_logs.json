@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "6635f6881b6115e18332d8fb"
+  },
+  "type": "deposit",
+  "email": "nasabah@untar.id",
+  "amount": 50000,
+  "message": "Deposit 50000",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635f6ec1b6115e18332d90c"
+  },
+  "type": "sent money",
+  "email": "nasabah@untar.id",
+  "to_email": "nasabah2@untar.id",
+  "amount": 10000,
+  "message": "Nasabah sent 10000 to Nasabah 2",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635fe114179f64363f7446b"
+  },
+  "type": "deposit",
+  "email": "nasabah@untar.id",
+  "amount": 30000,
+  "message": "Deposit 30000",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635ff901172963b40cd0b7c"
+  },
+  "type": "sent money",
+  "email": "nasabah@untar.id",
+  "to_email": "nasabah3@untar.id",
+  "amount": 15000,
+  "message": "Nasabah sent 15000 to Nasabah 3",
+  "__v": 0
+}]

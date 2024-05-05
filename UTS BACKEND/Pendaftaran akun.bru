@@ -1,0 +1,24 @@
+meta {
+  name: Pendaftaran akun
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5000/api/authentication/register
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHVudGFyLmlkIiwidXNlcklkIjoiNjYzNWU5NzQ1N2MxYjMzOWY5OGY0ODY5IiwiaWF0IjoxNzE0ODQ1MjkxLCJleHAiOjE3MTQ5MzE2OTF9.cbZpOuJ3NU5gXcFOROE3yRYbOVgj_-MXTVnUGVko6rs
+}
+
+body:json {
+  {
+    "name":"Nasabah 2",
+    "email":"nasabah2@untar.id",
+    "password":"Romusa#7!",
+    "password_confirm":"Romusa#7!"
+  }
+}

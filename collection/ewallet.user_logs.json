@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "6635fbbb0692e5d314e5a90b"
+  },
+  "email": "nasabah3@untar.id",
+  "message": "gagal login. Attemp = 1",
+  "successful": false,
+  "attemptTo": 1,
+  "attemptedAt": {
+    "$date": "2024-05-04T09:11:23.924Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635fbdb0692e5d314e5a912"
+  },
+  "email": "nasabah3@untar.id",
+  "message": "gagal login. Attemp = 2",
+  "successful": false,
+  "attemptTo": 2,
+  "attemptedAt": {
+    "$date": "2024-05-04T09:11:55.035Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635fc780692e5d314e5a918"
+  },
+  "email": "nasabah3@untar.id",
+  "message": "Berhasil login",
+  "successful": true,
+  "attemptTo": 0,
+  "attemptedAt": {
+    "$date": "2024-05-04T09:14:32.720Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635fd644179f64363f74460"
+  },
+  "email": "admin@untar.id",
+  "message": "Berhasil login",
+  "successful": true,
+  "attemptTo": 0,
+  "attemptedAt": {
+    "$date": "2024-05-04T09:18:28.139Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635fec04179f64363f74477"
+  },
+  "email": "nasabah@untar.id",
+  "message": "Berhasil login",
+  "successful": true,
+  "attemptTo": 0,
+  "attemptedAt": {
+    "$date": "2024-05-04T09:24:16.473Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635ff0b558e53e25bcd75d9"
+  },
+  "email": "nasabah@untar.id",
+  "message": "Berhasil login",
+  "successful": true,
+  "attemptTo": 0,
+  "attemptedAt": {
+    "$date": "2024-05-04T09:25:31.199Z"
+  },
+  "__v": 0
+}]

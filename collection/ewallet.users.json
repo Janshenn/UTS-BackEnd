@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "6635e4a13dcc4b6e2419d7d6"
+  },
+  "name": "Nasabah",
+  "email": "nasabah@untar.id",
+  "password": "$2b$16$T4iDc0zn4iNxKH55.CqwEeUd0rB3tt2W1zdYM16I.3wEgQzX8gw62",
+  "role": "user",
+  "account_status": true,
+  "balance": 55000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635e97457c1b339f98f4869"
+  },
+  "name": "Admin",
+  "email": "admin@untar.id",
+  "password": "$2b$16$bklWEpyGbDVNZeACL/JhR.Nz6HXzqIE4qvGeZv.IEmJskWsAY/8Mm",
+  "role": "admin",
+  "account_status": false,
+  "balance": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635eb9ac07a4bbfc67cdb98"
+  },
+  "name": "Nasabah 2",
+  "email": "nasabah2@untar.id",
+  "password": "$2b$16$SDjnvh3vT6oAfm2rPHwg2upLe2eS0UIEnjR7WTo5gueanF8fYOy46",
+  "role": "user",
+  "account_status": false,
+  "balance": 10000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635fa101b6115e18332d938"
+  },
+  "name": "Nasabah 3",
+  "email": "nasabah3@untar.id",
+  "password": "$2b$16$snSalhFLJERYZAhZTnn8y.wa52PjDdD7.jc6TER.qGjjalpoYASje",
+  "role": "user",
+  "account_status": true,
+  "balance": 15000,
+  "__v": 0
+}]

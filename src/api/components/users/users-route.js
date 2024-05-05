@@ -1,6 +1,6 @@
 const express = require('express');
 
-const authenticationMiddleware = require('../../middlewares/authentication-middleware');
+const middle = require('../../middlewares/admin-middleware');
 const celebrate = require('../../../core/celebrate-wrappers');
 const usersControllers = require('./users-controller');
 const usersValidator = require('./users-validator');
@@ -11,35 +11,46 @@ module.exports = (app) => {
   app.use('/users', route);
 
   // Get list of users
-  route.get('/', authenticationMiddleware, usersControllers.getUsers);
+  route.get('/', middle, usersControllers.getUsers);
 
   // Create user
   route.post(
     '/',
-    authenticationMiddleware,
+    middle,
     celebrate(usersValidator.createUser),
     usersControllers.createUser
   );
 
   // Get user detail
-  route.get('/:id', authenticationMiddleware, usersControllers.getUser);
+  route.get('/:id', middle, usersControllers.getUser);
 
   // Update user
   route.put(
     '/:id',
-    authenticationMiddleware,
+    middle,
     celebrate(usersValidator.updateUser),
     usersControllers.updateUser
   );
 
   // Delete user
-  route.delete('/:id', authenticationMiddleware, usersControllers.deleteUser);
+  route.delete('/:id', middle, usersControllers.deleteUser);
 
   // Change password
   route.post(
     '/:id/change-password',
-    authenticationMiddleware,
+    middle,
     celebrate(usersValidator.changePassword),
     usersControllers.changePassword
   );
+
+  // DEPOSIT
+  route.post(
+    '/:id/deposit',
+    middle,
+    celebrate(usersValidator.deposit),
+    usersControllers.deposit
+  );
+
+  // VERIFIED
+  route.post('/:id/verified', middle, usersControllers.verified);
 };
